@@ -1017,7 +1017,7 @@ end
 
 if text == 'تحديث السورس ⅌' and SudoBot(msg) then 
 os.execute('rm -rf SNAP.lua')
-os.execute('wget https://raw.githubusercontent.com/SRC-DRAGON/DRAGON/main/DRAGON.lua')
+os.execute('wget https://raw.githubusercontent.com/SEC-SNAP/SNAP/main/SNAP.lua')
 send(msg.chat_id_, msg.id_,' ⅌︙ تم تحديث السورس \n ⅌︙ لديك اخر اصدار لسورس سناب\n ⅌︙ الاصدار » { v 1.4}')
 dofile('SNAP.lua')  
 end
@@ -2264,7 +2264,7 @@ end
 return false
 end
 os.execute('rm -rf SNAP.lua')
-os.execute('wget https://raw.githubusercontent.com/SRC-DRAGON/DRAGON/main/DRAGON.lua')
+os.execute('wget https://raw.githubusercontent.com/SEC-SNAP/SNAP/main/SNAP.lua')
 send(msg.chat_id_, msg.id_,' ⅌︙ تم تحديث السورس \n ⅌︙ لديك اخر اصدار لسورس سناب\n ⅌︙ الاصدار » { v 1.4}')
 dofile('SNAP.lua')  
 end
