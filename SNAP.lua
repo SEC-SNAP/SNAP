@@ -161,7 +161,7 @@ io.popen("mkdir File_Bot")
 io.popen("cd File_Bot && rm -rf commands.lua.1") 
 io.popen("cd File_Bot && rm -rf commands.lua.2") 
 io.popen("cd File_Bot && rm -rf commands.lua.3") 
-io.popen("cd File_Bot && wget https://raw.githubusercontent.com/SRC-DRAGON/Files_Dragon/main/File_Bot/commands.lua") 
+io.popen("cd File_Bot && wget https://raw.githubusercontent.com/SRC-SNAP/Files_SNAP/main/File_Bot/commands.lua") 
 t = "\27[35m".."\nAll Files Started : \n____________________\n"..'\27[m'
 i = 0
 for v in io.popen('ls File_Bot'):lines() do
@@ -176,13 +176,13 @@ print(serpent.block(value, {comment=false}))
 end 
 sudo_users = {SUDO,119541395,16076569}   
 function SudoBot(msg)  
-local DRAGON = false  
+local SNAP = false  
 for k,v in pairs(sudo_users) do  
 if tonumber(msg.sender_user_id_) == tonumber(v) then  
-DRAGON = true  
+SNAP = true  
 end  
 end  
-return DRAGON  
+return SNAP  
 end 
 function Bot(msg)  
 local idbot = false  
@@ -472,35 +472,35 @@ local function sendPhoto(chat_id, reply_to_message_id, disable_notification, fro
 tdcli_function ({ ID = "SendMessage",   chat_id_ = chat_id,   reply_to_message_id_ = reply_to_message_id,   disable_notification_ = disable_notification,   from_background_ = from_background,   reply_markup_ = reply_markup,   input_message_content_ = {   ID = "InputMessagePhoto",   photo_ = getInputFile(photo),   added_sticker_file_ids_ = {},   width_ = 0,   height_ = 0,   caption_ = caption  },   }, dl_cb, nil)  
 end
 function Total_Msg(msgs)  
-local DRAGON_Msg = ''  
+local SNAP_Msg = ''  
 if msgs < 100 then 
-DRAGON_Msg = 'غير متفاعل' 
+SNAP_Msg = 'غير متفاعل' 
 elseif msgs < 200 then 
-DRAGON_Msg = 'بده يتحسن' 
+SNAP_Msg = 'بده يتحسن' 
 elseif msgs < 400 then 
-DRAGON_Msg = 'شبه متفاعل' 
+SNAP_Msg = 'شبه متفاعل' 
 elseif msgs < 700 then 
-DRAGON_Msg = 'متفاعل' 
+SNAP_Msg = 'متفاعل' 
 elseif msgs < 1200 then 
-DRAGON_Msg = 'متفاعل قوي' 
+SNAP_Msg = 'متفاعل قوي' 
 elseif msgs < 2000 then 
-DRAGON_Msg = 'متفاعل جدا' 
+SNAP_Msg = 'متفاعل جدا' 
 elseif msgs < 3500 then 
-DRAGON_Msg = 'اقوى تفاعل'  
+SNAP_Msg = 'اقوى تفاعل'  
 elseif msgs < 4000 then 
-DRAGON_Msg = 'متفاعل نار' 
+SNAP_Msg = 'متفاعل نار' 
 elseif msgs < 4500 then 
-DRAGON_Msg = 'قمة التفاعل'
+SNAP_Msg = 'قمة التفاعل'
 elseif msgs < 5500 then 
-DRAGON_Msg = 'اقوى متفاعل' 
+SNAP_Msg = 'اقوى متفاعل' 
 elseif msgs < 7000 then 
-DRAGON_Msg = 'ملك التفاعل' 
+SNAP_Msg = 'ملك التفاعل' 
 elseif msgs < 9500 then 
-DRAGON_Msg = 'امبروطور التفاعل' 
+SNAP_Msg = 'امبروطور التفاعل' 
 elseif msgs < 10000000000 then 
-DRAGON_Msg = 'رب التفاعل'  
+SNAP_Msg = 'رب التفاعل'  
 end 
-return DRAGON_Msg 
+return SNAP_Msg 
 end
 function Get_Info(msg,chat,user) 
 local Chek_Info = https.request('https://api.telegram.org/bot'..token..'/getChatMember?chat_id='.. chat ..'&user_id='.. user..'')
@@ -554,16 +554,16 @@ function GetFile_Bot(msg)
 local list = database:smembers(bot_id..'Chek:Groups') 
 local t = '{"BOT_ID": '..bot_id..',"GP_BOT":{'  
 for k,v in pairs(list) do   
-NAME = 'DRAGON Chat'
+NAME = 'SNAP Chat'
 link = database:get(bot_id.."Private:Group:Link"..msg.chat_id_) or ''
 ASAS = database:smembers(bot_id..'Basic:Constructor'..v)
 MNSH = database:smembers(bot_id..'Constructor'..v)
 MDER = database:smembers(bot_id..'Manager'..v)
 MOD = database:smembers(bot_id..'Mod:User'..v)
 if k == 1 then
-t = t..'"'..v..'":{"DRAGON":"'..NAME..'",'
+t = t..'"'..v..'":{"SNAP":"'..NAME..'",'
 else
-t = t..',"'..v..'":{"DRAGON":"'..NAME..'",'
+t = t..',"'..v..'":{"SNAP":"'..NAME..'",'
 end
 if #ASAS ~= 0 then 
 t = t..'"ASAS":['
@@ -748,12 +748,12 @@ return false
 end
 end,nil)   
 end  
-function plugin_Dragon(msg)
+function plugin_SNAP(msg)
 for v in io.popen('ls File_Bot'):lines() do
 if v:match(".lua$") then
 plugin = dofile("File_Bot/"..v)
-if plugin.Dragon and msg then
-pre_msg = plugin.Dragon(msg)
+if plugin.SNAP and msg then
+pre_msg = plugin.SNAP(msg)
 end
 end
 end
@@ -761,7 +761,7 @@ send(msg.chat_id_, msg.id_,pre_msg)
 end
 
 --------------------------------------------------------------------------------------------------------------
-function SourceDRAGON(msg,data) -- بداية العمل
+function SourceSNAP(msg,data) -- بداية العمل
 if msg then
 local text = msg.content_.text_
 --------------------------------------------------------------------------------------------------------------
@@ -852,11 +852,11 @@ else
 if not database:get(bot_id..'Start:Time'..msg.sender_user_id_) then
 local start = database:get(bot_id.."Start:Bot")  
 if start then 
-SourceDRAGONr = start
+SourceSNAPr = start
 else
-SourceDRAGONr = ' ⅌︙ اهلا عزيزي\n ⅌︙ انا بوت اسمي ' ..Namebot..'\n ⅌︙ اختصاصي حمايه الكروبات\n ⅌︙ من تكرار والسبام والتوجيه والخ…\n ⅌︙ لتفعيلي اتبع الاخطوات…↓\n ⅌︙ اضفني الي مجموعتك وقم بترقيتي ادمن واكتب كلمه { تفعيل }  ويستطيع »{ منشئ او المشرفين } بتفعيل فقط\n[ ⅌︙ معرف المطور ['..UserName..']'
+SourceSNAPr = ' ⅌︙ اهلا عزيزي\n ⅌︙ انا بوت اسمي ' ..Namebot..'\n ⅌︙ اختصاصي حمايه الكروبات\n ⅌︙ من تكرار والسبام والتوجيه والخ…\n ⅌︙ لتفعيلي اتبع الاخطوات…↓\n ⅌︙ اضفني الي مجموعتك وقم بترقيتي ادمن واكتب كلمه { تفعيل }  ويستطيع »{ منشئ او المشرفين } بتفعيل فقط\n[ ⅌︙ معرف المطور ['..UserName..']'
 end 
-send(msg.chat_id_, msg.id_, SourceDRAGONr) 
+send(msg.chat_id_, msg.id_, SourceSNAPr) 
 end
 end
 database:setex(bot_id..'Start:Time'..msg.sender_user_id_,300,true)
@@ -899,8 +899,8 @@ end
 tdcli_function({ID='GetChat',chat_id_ = id_user},function(arg,dataq)
 tdcli_function ({ ID = "SendChatAction",chat_id_ = id_user, action_ = {  ID = "SendMessageTypingAction", progress_ = 100} },function(arg,ta) 
 if ta.code_ == 400 or ta.code_ == 5 then
-local DRAGON_Msg = '\n ⅌︙ قام الشخص بحظر البوت'
-send(msg.chat_id_, msg.id_,DRAGON_Msg) 
+local SNAP_Msg = '\n ⅌︙ قام الشخص بحظر البوت'
+send(msg.chat_id_, msg.id_,SNAP_Msg) 
 return false  
 end 
 if text then    
@@ -1202,19 +1202,19 @@ if #group == i then
 if (w + q) == 0 then
 send(msg.chat_id_, msg.id_,'⅌︙ لا يوجد كروبات وهميه في البوت\n')   
 else
-local DRAGON = (w + q)
-local sendok = #group - DRAGON
+local SNAP = (w + q)
+local sendok = #group - SNAP
 if q == 0 then
-DRAGON = ''
+SNAP = ''
 else
-DRAGON = '\n⅌︙ تم ازالة » { '..q..' } كروبات من البوت'
+SNAP = '\n⅌︙ تم ازالة » { '..q..' } كروبات من البوت'
 end
 if w == 0 then
-DRAGONk = ''
+SNAPk = ''
 else
-DRAGONk = '\n⅌︙ تم ازالة » {'..w..'} كروب لان البوت عضو'
+SNAPk = '\n⅌︙ تم ازالة » {'..w..'} كروب لان البوت عضو'
 end
-send(msg.chat_id_, msg.id_,'⅌︙  عدد الكروبات الان » { '..#group..' }'..DRAGONk..''..DRAGON..'\n⅌︙  الان عدد الكروبات الحقيقي » { '..sendok..' } كروبات\n')   
+send(msg.chat_id_, msg.id_,'⅌︙  عدد الكروبات الان » { '..#group..' }'..SNAPk..''..SNAP..'\n⅌︙  الان عدد الكروبات الحقيقي » { '..sendok..' } كروبات\n')   
 end
 end
 end,nil)
@@ -1329,10 +1329,10 @@ end
 end
 --------------------------------------------------------------------------------------------------------------
 if text and not Special(msg) then  
-local DRAGON1_Msg = database:get(bot_id.."DRAGON1:Add:Filter:Rp2"..text..msg.chat_id_)   
-if DRAGON1_Msg then 
+local SNAP1_Msg = database:get(bot_id.."SNAP1:Add:Filter:Rp2"..text..msg.chat_id_)   
+if SNAP1_Msg then 
 tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(arg,data) 
-send(msg.chat_id_, msg.id_,' ⅌︙ العضو » ['..Rutba(msg.sender_user_id_,msg.chat_id_)..'](T.ME/'..(data.username_ or 'K8XXX')..') \n ⅌︙ '..DRAGON1_Msg)
+send(msg.chat_id_, msg.id_,' ⅌︙ العضو » ['..Rutba(msg.sender_user_id_,msg.chat_id_)..'](T.ME/'..(data.username_ or 'K8XXX')..') \n ⅌︙ '..SNAP1_Msg)
 DeleteMessage(msg.chat_id_, {[0] = msg.id_})     
 return false
 end,nil)
@@ -1577,14 +1577,14 @@ return false
 end
 end 
 --------------------------------------------------------------------------------------------------------------
-if DRAGON_Msg and not Special(msg) then  
-local DRAGON_Msg = database:get(bot_id.."Add:Filter:Rp2"..text..msg.chat_id_)   
-if DRAGON_Msg then    
+if SNAP_Msg and not Special(msg) then  
+local SNAP_Msg = database:get(bot_id.."Add:Filter:Rp2"..text..msg.chat_id_)   
+if SNAP_Msg then    
 tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(arg,data) 
 if data.username_ ~= false then
-send(msg.chat_id_,0," ⅌︙ العضو : {["..data.first_name_.."](T.ME/"..data.username_..")}\n ⅌︙ ["..DRAGON_Msg.."] \n")
+send(msg.chat_id_,0," ⅌︙ العضو : {["..data.first_name_.."](T.ME/"..data.username_..")}\n ⅌︙ ["..SNAP_Msg.."] \n")
 else
-send(msg.chat_id_,0," ⅌︙ العضو : {["..data.first_name_.."](T.ME/K8XXX)}\n ⅌︙ ["..DRAGON_Msg.."] \n")
+send(msg.chat_id_,0," ⅌︙ العضو : {["..data.first_name_.."](T.ME/K8XXX)}\n ⅌︙ ["..SNAP_Msg.."] \n")
 end
 end,nil)   
 DeleteMessage(msg.chat_id_, {[0] = msg.id_})     
@@ -3537,7 +3537,7 @@ send(msg.chat_id_, msg.id_,t)
 end
 if text == "متجر الملفات" or text == 'المتجر' then
 if SudoBot(msg) then
-local Get_Files, res = https.request("https://raw.githubusercontent.com/SRC-DRAGON/Files_Dragon/main/getfile.json")
+local Get_Files, res = https.request("https://raw.githubusercontent.com/SRC-SNAP/Files_SNAP/main/getfile.json")
 if res == 200 then
 local Get_info, res = pcall(JSON.decode,Get_Files);
 vardump(res.plugins_)
@@ -3575,7 +3575,7 @@ t = " ⅌︙ الملف » "..file.."\n ⅌︙ تم تعطيل ملف \n"
 else
 t = " ⅌︙ بالتاكيد تم تعطيل ملف → "..file.."\n"
 end
-local json_file, res = https.request("https://raw.githubusercontent.com/SRC-DRAGON/Files_Dragon/main/File_Bot/"..file)
+local json_file, res = https.request("https://raw.githubusercontent.com/SRC-SNAP/Files_SNAP/main/File_Bot/"..file)
 if res == 200 then
 os.execute("rm -fr File_Bot/"..file)
 send(msg.chat_id_, msg.id_,t) 
@@ -3595,7 +3595,7 @@ t = " ⅌︙ بالتاكيد تم تفعيل ملف → "..file.." \n"
 else
 t = " ⅌︙ الملف » "..file.."\n ⅌︙ تم تفعيل ملف \n"
 end
-local json_file, res = https.request("https://raw.githubusercontent.com/SRC-DRAGON/Files_Dragon/main/File_Bot/"..file)
+local json_file, res = https.request("https://raw.githubusercontent.com/SRC-SNAP/Files_SNAP/main/File_Bot/"..file)
 if res == 200 then
 local chek = io.open("File_Bot/"..file,'w+')
 chek:write(json_file)
@@ -4176,7 +4176,7 @@ if b.first_name_ == false then
 send(msg.chat_id_, msg.id_," ⅌︙ حساب المنشئ محذوف")
 return false  
 end
-local UserName = (b.username_ or "SRC-DRAGON")
+local UserName = (b.username_ or "SRC-SNAP")
 send(msg.chat_id_, msg.id_," ⅌︙ منشئ الكروب » ["..b.first_name_.."](T.me/"..UserName..")")  
 end,nil)   
 end
@@ -7748,42 +7748,42 @@ end
 end
 if text and text == "منع" and msg.reply_to_message_id_ == 0 and Manager(msg)  then       
 send(msg.chat_id_, msg.id_," ⅌︙ ارسل الكلمه لمنعها")  
-database:set(bot_id.."DRAGON1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_,"rep")  
+database:set(bot_id.."SNAP1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_,"rep")  
 return false  
 end    
 if text then   
-local tsssst = database:get(bot_id.."DRAGON1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_)  
+local tsssst = database:get(bot_id.."SNAP1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_)  
 if tsssst == "rep" then   
 send(msg.chat_id_, msg.id_," ⅌︙ ارسل التحذير عند ارسال الكلمه")  
-database:set(bot_id.."DRAGON1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_,"repp")  
-database:set(bot_id.."DRAGON1:filtr1:add:reply2"..msg.sender_user_id_..msg.chat_id_, text)  
-database:sadd(bot_id.."DRAGON1:List:Filter"..msg.chat_id_,text)  
+database:set(bot_id.."SNAP1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_,"repp")  
+database:set(bot_id.."SNAP1:filtr1:add:reply2"..msg.sender_user_id_..msg.chat_id_, text)  
+database:sadd(bot_id.."SNAP1:List:Filter"..msg.chat_id_,text)  
 return false  end  
 end
 if text then  
-local test = database:get(bot_id.."DRAGON1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_)  
+local test = database:get(bot_id.."SNAP1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_)  
 if test == "repp" then  
 send(msg.chat_id_, msg.id_," ⅌︙ تم منع الكلمه مع التحذير")  
-database:del(bot_id.."DRAGON1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_)  
-local test = database:get(bot_id.."DRAGON1:filtr1:add:reply2"..msg.sender_user_id_..msg.chat_id_)  
+database:del(bot_id.."SNAP1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_)  
+local test = database:get(bot_id.."SNAP1:filtr1:add:reply2"..msg.sender_user_id_..msg.chat_id_)  
 if text then   
-database:set(bot_id.."DRAGON1:Add:Filter:Rp2"..test..msg.chat_id_, text)  
+database:set(bot_id.."SNAP1:Add:Filter:Rp2"..test..msg.chat_id_, text)  
 end  
-database:del(bot_id.."DRAGON1:filtr1:add:reply2"..msg.sender_user_id_..msg.chat_id_)  
+database:del(bot_id.."SNAP1:filtr1:add:reply2"..msg.sender_user_id_..msg.chat_id_)  
 return false  end  
 end
 
 if text == "الغاء منع" and msg.reply_to_message_id_ == 0 and Manager(msg) then    
 send(msg.chat_id_, msg.id_," ⅌︙ ارسل الكلمه الان")  
-database:set(bot_id.."DRAGON1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_,"reppp")  
+database:set(bot_id.."SNAP1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_,"reppp")  
 return false  end
 if text then 
-local test = database:get(bot_id.."DRAGON1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_)  
+local test = database:get(bot_id.."SNAP1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_)  
 if test and test == "reppp" then   
 send(msg.chat_id_, msg.id_," ⅌︙ تم الغاء منعها")  
-database:del(bot_id.."DRAGON1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_)  
-database:del(bot_id.."DRAGON1:Add:Filter:Rp2"..text..msg.chat_id_)  
-database:srem(bot_id.."DRAGON1:List:Filter"..msg.chat_id_,text)  
+database:del(bot_id.."SNAP1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_)  
+database:del(bot_id.."SNAP1:Add:Filter:Rp2"..text..msg.chat_id_)  
+database:srem(bot_id.."SNAP1:List:Filter"..msg.chat_id_,text)  
 return false  end  
 end
 
@@ -7844,21 +7844,21 @@ tdcli_function ({ ID = "GetMessage", chat_id_ = msg.chat_id_, message_id_ = tonu
 end
 
 if text == "مسح قائمه المنع"and Manager(msg) then   
-local list = database:smembers(bot_id.."DRAGON1:List:Filter"..msg.chat_id_)  
+local list = database:smembers(bot_id.."SNAP1:List:Filter"..msg.chat_id_)  
 for k,v in pairs(list) do  
-database:del(bot_id.."DRAGON1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_)  
-database:del(bot_id.."DRAGON1:Add:Filter:Rp2"..v..msg.chat_id_)  
-database:srem(bot_id.."DRAGON1:List:Filter"..msg.chat_id_,v)  
+database:del(bot_id.."SNAP1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_)  
+database:del(bot_id.."SNAP1:Add:Filter:Rp2"..v..msg.chat_id_)  
+database:srem(bot_id.."SNAP1:List:Filter"..msg.chat_id_,v)  
 end  
 send(msg.chat_id_, msg.id_," ⅌︙ تم مسح قائمه المنع")  
 end
 
 if text == "قائمه المنع" and Manager(msg) then   
-local list = database:smembers(bot_id.."DRAGON1:List:Filter"..msg.chat_id_)  
+local list = database:smembers(bot_id.."SNAP1:List:Filter"..msg.chat_id_)  
 t = "\n ⅌︙ قائمة المنع \nٴ≪┉ ┉ ┉ ┉ ┉ 𝐃𝐑𝐠 ┉  ┉ ┉ ┉ ┉≫ٴ\n"
 for k,v in pairs(list) do  
-local DRAGON_Msg = database:get(bot_id.."DRAGON1:Add:Filter:Rp2"..v..msg.chat_id_)   
-t = t..""..k.."- "..v.." » {"..DRAGON_Msg.."}\n"    
+local SNAP_Msg = database:get(bot_id.."SNAP1:Add:Filter:Rp2"..v..msg.chat_id_)   
+t = t..""..k.."- "..v.." » {"..SNAP_Msg.."}\n"    
 end  
 if #list == 0 then  
 t = " ⅌︙ لا يوجد كلمات ممنوعه"  
@@ -8531,7 +8531,7 @@ end
 
 if text == ""..(database:get(bot_id..'Name:Bot') or 'دراكون').."" then  
 Namebot = (database:get(bot_id..'Name:Bot') or 'دراكون')
-local DRAGON_Msg = {
+local SNAP_Msg = {
 'عمغي 🥺💕.',
 'ياروحي كول اني  '..Namebot..'',
 'شتريد من '..Namebot..'',
@@ -8544,7 +8544,7 @@ local DRAGON_Msg = {
 'كول حبيبي ؟ اني '..Namebot..'',
 'عمري فداك '..Namebot..' كول حب'
 }
-send(msg.chat_id_, msg.id_,'['..DRAGON_Msg[math.random(#DRAGON_Msg)]..']') 
+send(msg.chat_id_, msg.id_,'['..SNAP_Msg[math.random(#SNAP_Msg)]..']') 
 return false
 end
 if text=="اذاعه خاص" and msg.reply_to_message_id_ == 0 and Sudo(msg) then 
@@ -8653,10 +8653,10 @@ end
 return false
 end
 tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 200
-},function(ta,DRAGON)
+},function(ta,SNAP)
 local t = "\nツ قائمة الاعضاء \nٴ≪┉ ┉ ┉ ┉ ┉ 𝐃𝐑𝐠 ┉  ┉ ┉ ┉ ┉≫ٴ\n"
 x = 0
-local list = DRAGON.members_
+local list = SNAP.members_
 for k, v in pairs(list) do
 x = x + 1
 if database:get(bot_id..'user:Name'..v.user_id_) then
@@ -10042,19 +10042,19 @@ if #group == i then
 if (w + q) == 0 then
 send(msg.chat_id_, msg.id_,' ⅌︙  لا يوجد كروبات وهميه في البوت\n')   
 else
-local DRAGON = (w + q)
-local sendok = #group - DRAGON
+local SNAP = (w + q)
+local sendok = #group - SNAP
 if q == 0 then
-DRAGON = ''
+SNAP = ''
 else
-DRAGON = '\n- تم ازالة » { '..q..' } كروبات من البوت'
+SNAP = '\n- تم ازالة » { '..q..' } كروبات من البوت'
 end
 if w == 0 then
-DRAGONk = ''
+SNAPk = ''
 else
-DRAGONk = '\n- تم ازالة » {'..w..'} كروب لان البوت عضو'
+SNAPk = '\n- تم ازالة » {'..w..'} كروب لان البوت عضو'
 end
-send(msg.chat_id_, msg.id_,' ⅌︙ عدد الكروبات الان » { '..#group..' }'..DRAGONk..''..DRAGON..'\n*- الان عدد الكروبات الحقيقي » { '..sendok..' } كروبات\n')   
+send(msg.chat_id_, msg.id_,' ⅌︙ عدد الكروبات الان » { '..#group..' }'..SNAPk..''..SNAP..'\n*- الان عدد الكروبات الحقيقي » { '..sendok..' } كروبات\n')   
 end
 end
 end,nil)
@@ -10065,7 +10065,7 @@ end
 if text and text:match("^(gpinfo)$") or text and text:match("^معلومات الكروب$") then
 function gpinfo(arg,data)
 -- vardump(data) 
-DRAGONdx(msg.chat_id_, msg.id_, ' ⅌︙ ايدي المجموعة » ( '..msg.chat_id_..' )\n ⅌︙ عدد الادمنيه » ( *'..data.administrator_count_..' )*\n ⅌︙ عدد المحظورين » ( *'..data.kicked_count_..' )*\n ⅌︙ عدد الاعضاء » ( *'..data.member_count_..' )*\n', 'md') 
+SNAPdx(msg.chat_id_, msg.id_, ' ⅌︙ ايدي المجموعة » ( '..msg.chat_id_..' )\n ⅌︙ عدد الادمنيه » ( *'..data.administrator_count_..' )*\n ⅌︙ عدد المحظورين » ( *'..data.kicked_count_..' )*\n ⅌︙ عدد الاعضاء » ( *'..data.member_count_..' )*\n', 'md') 
 end 
 getChannelFull(msg.chat_id_, gpinfo, nil) 
 end
@@ -10793,8 +10793,8 @@ local Bots = database:get(bot_id.."lock:Bot:kick"..msg.chat_id_)
 for i=0,#mem_id do  
 if msg.content_.members_[i].type_.ID == "UserTypeBot" and not Mod(msg) and Bots == "kick" then   
 https.request("https://api.telegram.org/bot"..token.."/kickChatMember?chat_id="..msg.chat_id_.."&user_id="..msg.sender_user_id_)
-DRAGON = https.request("https://api.telegram.org/bot"..token.."/kickChatMember?chat_id="..msg.chat_id_.."&user_id="..mem_id[i].id_)
-local Json_Info = JSON.decode(DRAGON)
+SNAP = https.request("https://api.telegram.org/bot"..token.."/kickChatMember?chat_id="..msg.chat_id_.."&user_id="..mem_id[i].id_)
+local Json_Info = JSON.decode(SNAP)
 if Json_Info.ok == true and #mem_id == i then
 local Msgs = {}
 Msgs[0] = msg.id_
@@ -10815,8 +10815,8 @@ local mem_id = msg.content_.members_
 local Bots = database:get(bot_id.."lock:Bot:kick"..msg.chat_id_) 
 for i=0,#mem_id do  
 if msg.content_.members_[i].type_.ID == "UserTypeBot" and not Mod(msg) and Bots == "del" then   
-DRAGON = https.request("https://api.telegram.org/bot"..token.."/kickChatMember?chat_id="..msg.chat_id_.."&user_id="..mem_id[i].id_)
-local Json_Info = JSON.decode(DRAGON)
+SNAP = https.request("https://api.telegram.org/bot"..token.."/kickChatMember?chat_id="..msg.chat_id_.."&user_id="..mem_id[i].id_)
+local Json_Info = JSON.decode(SNAP)
 if Json_Info.ok == true and #mem_id == i then
 local Msgs = {}
 Msgs[0] = msg.id_
@@ -10849,8 +10849,8 @@ return false
 end    
 end   
 --------------------------------------------------------------------------------------------------------------
-SourceDRAGON(data.message_,data)
-plugin_Dragon(data.message_)
+SourceSNAP(data.message_,data)
+plugin_SNAP(data.message_)
 --------------------------------------------------------------------------------------------------------------
 if Chat_Type == 'GroupBot' and ChekAdd(msg.chat_id_) == true then
 tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(arg,data) 
@@ -10957,13 +10957,13 @@ return false
 end  
 end 
 ------------------------------------------------------------------------
-local DRAGONAbot = database:get(bot_id.."DRAGON1:Add:Filter:Rp2"..text..result.chat_id_)   
-if DRAGONAbot then    
+local SNAPAbot = database:get(bot_id.."SNAP1:Add:Filter:Rp2"..text..result.chat_id_)   
+if SNAPAbot then    
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
 if data.username_ ~= false then
-send(msg.chat_id_,0," ⅌︙ العضو : {["..data.first_name_.."](T.ME/"..data.username_..")}\n ⅌︙ ["..DRAGONAbot.."] \n") 
+send(msg.chat_id_,0," ⅌︙ العضو : {["..data.first_name_.."](T.ME/"..data.username_..")}\n ⅌︙ ["..SNAPAbot.."] \n") 
 else
-send(msg.chat_id_,0," ⅌︙ العضو : {["..data.first_name_.."](T.ME/K8XXX)}\n ⅌︙ ["..DRAGONAbot.."] \n") 
+send(msg.chat_id_,0," ⅌︙ العضو : {["..data.first_name_.."](T.ME/K8XXX)}\n ⅌︙ ["..SNAPAbot.."] \n") 
 end
 end,nil)   
 DeleteMessage(msg.chat_id_,{[0] = data.message_id_}) 
@@ -10984,9 +10984,9 @@ end
 end
 ------------------------------------------------------------------------
 if text then
-local DRAGON1_Msg = database:get(bot_id.."DRAGON1:Add:Filter:Rp2"..text..result.chat_id_)   
-if DRAGON1_Msg then    
-send(msg.chat_id_, msg.id_," ⅌︙ "..DRAGON1_Msg)
+local SNAP1_Msg = database:get(bot_id.."SNAP1:Add:Filter:Rp2"..text..result.chat_id_)   
+if SNAP1_Msg then    
+send(msg.chat_id_, msg.id_," ⅌︙ "..SNAP1_Msg)
 DeleteMessage(result.chat_id_, {[0] = data.message_id_})     
 return false
 end
