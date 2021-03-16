@@ -6515,7 +6515,7 @@ if Can_or_NotCan(result.id_, msg.chat_id_) == true then
 send(msg.chat_id_, msg.id_, '\n ⅌꞉ عذرا لا تستطيع كتم ( '..Rutba(result.id_,msg.chat_id_)..' )')
 else
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_," ⅌꞉ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_," ⅌꞉ عذرا عزيزي ��لمستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
 return false 
 end      
 database:sadd(bot_id..'Muted:User'..msg.chat_id_, result.id_)
@@ -9199,6 +9199,17 @@ local video = database:get(bot_id.."Add:Rd:Manager:Video"..text..msg.chat_id_)
 local document = database:get(bot_id.."Add:Rd:Manager:File"..text..msg.chat_id_)
 local audio = database:get(bot_id.."Add:Rd:Manager:Audio"..text..msg.chat_id_)
 ------------------------------------------------------------------------
+if text == "غنيلي" then
+data,res = https.request('https://black-source.tk/BlackTeAM/audios.php')
+if res == 200 then
+audios = json:decode(data)
+if audios.Info == true then
+local done = download_to_file(audios.info,msg.sender_user_id_..'.mp3')
+sendAudio(msg.chat_id_,msg.id_,'./'..msg.sender_user_id_..'.mp3','اهداء من البوت لك💗','تم اختيار المقطع الصوتي خصيصا لك','end')
+os.execute('rm -rf ./'..msg.sender_user_id_..'.mp3') 
+end
+end
+end
 if text == "راسلني" then
 rpl = {"ها هلاو","انطق","كول"};
 sender = rpl[math.random(#rpl)]
