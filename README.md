@@ -1,15 +1,15 @@
 
-# سورس بوت ميلا
+# SNAP
 
-# <p align="center" style="color:#cb3349" >سورس بوت ميلا فقط ⌯︙
+# <p align="center" style="color:#cb3349" >سورس سنـاب ⌯︙
 
-# <p align="center" style="color:#cb3349" > مطورين سورس ميلا
+# <p align="center" style="color:#cb3349" > مطورين سورس سنـاب
 
-# <p align="center" style="color:#cb3349" > [اصـــغـــط هــنـــا لــلــدخــول الــى الــقــنــاة](https://telegram.me/byroo9) <br>
+# <p align="center" style="color:#cb3349" > [اصـــغـــط هــنـــا لــلــدخــول الــى الــقــنــاة](https://telegram.me/K8XXX) <br>
 
 # <p align="center"> كود تنصيب السورس ⌯︙
 
- # <p align="center" style="color:#cb3349" > ``git clone https://github.com/s00f4/MELA ;cd MELA;chmod +x install;./install``
+ # <p align="center" style="color:#cb3349" > ``git clone https://github.com/SEC-SNAP/SNAP ;cd SNAP;chmod +x install;./install``
 
 # <p align="center"> بعد انتهاء عمليه تثبيت السورس ⌯︙
 
@@ -23,10 +23,4 @@
 
   
 
-# <p align="center" style="color:#cb3349" > [مــطــور ســورس](https://telegram.me/s00f4) <br>
-
-  
-
-  
-
-# <p align="center" style="color:#cb3349" > [كـــروب مــــود](https://telegram.me/joinchat/APVPGU43ZnxKwJGnuBKDww) <br>
+# <p align="center" style="color:#cb3349" > [مــطــور ســورس](https://telegram.me/@JJ4444) <br>
