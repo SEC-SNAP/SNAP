@@ -667,6 +667,30 @@ file:write(table.concat(respbody))
 file:close() 
 return file_path, code 
 end 
+function Addjpg(msg,chat,ID_FILE,File_Name)
+local File = json:decode(https.request('https://api.telegram.org/bot'.. token..'/getfile?file_id='..ID_FILE)) 
+download_to_file('https://api.telegram.org/file/bot'..token..'/'..File.result.file_path,File_Name) 
+sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil,'./'..File_Name,'تم تحويل الملصق الى صوره')     
+os.execute('rm -rf ./'..File_Name) 
+end
+function Addvoi(msg,chat,vi,ty)
+local eq = json:decode(https.request('https://api.telegram.org/bot'.. token..'/getfile?file_id='..vi)) 
+download_to_file('https://api.telegram.org/file/bot'..token..'/'..eq.result.file_path,ty) 
+sendVoice(msg.chat_id_, msg.id_, 0, 1, nil, './'..ty)   
+os.execute('rm -rf ./'..ty) 
+end
+function Addmp3(msg,chat,kkl,ffrr)
+local eer = json:decode(https.request('https://api.telegram.org/bot'.. token..'/getfile?file_id='..kkl)) 
+download_to_file('https://api.telegram.org/file/bot'..token..'/'..eer.result.file_path,ffrr) 
+sendAudio(msg.chat_id_,msg.id_,'./'..ffrr,"🎼┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝙳𝚁𝙰𝙶𝙾𝙽.")  
+os.execute('rm -rf ./'..ffrr) 
+end
+function Addsticker(msg,chat,Sd,rre)
+local Qw = json:decode(https.request('https://api.telegram.org/bot'.. token..'/getfile?file_id='..Sd)) 
+download_to_file('https://api.telegram.org/file/bot'..token..'/'..Qw.result.file_path,rre) 
+sendSticker(msg.chat_id_, msg.id_, 0, 1, nil, './'..rre)
+os.execute('rm -rf ./'..rre) 
+end
 function AddFile_Bot(msg,chat,ID_FILE,File_Name)
 if File_Name:match('.json') then
 if tonumber(File_Name:match('(%d+)')) ~= tonumber(bot_id) then 
@@ -4030,6 +4054,68 @@ end
 Reply_Status(msg,msg.sender_user_id_,"reply","⋄ :  قام بنشر صوره اباحيه\n"..t)  
 DeleteMessage(msg.chat_id_,{[0] = tonumber(msg.id_),msg.id_})   
 end   
+end
+if text == 'تفعيل التحويل' and CoSu(msg) then   
+if database:get(bot_id..'DRAGOON:change:sofi'..msg.chat_id_) then
+Text = 'تم تفعيل تحويل الصيغ'
+database:del(bot_id..'DRAGOON:change:sofi'..msg.chat_id_)  
+else
+Text = ' ⋄ :  بالتاكيد تم تفعيل امر تحويل'
+end
+send(msg.chat_id_, msg.id_,Text) 
+end
+if text == 'تعطيل التحويل' and CoSu(msg) then  
+if not database:get(bot_id..'DRAGOON:change:sofi'..msg.chat_id_) then
+database:set(bot_id..'DRAGOON:change:sofi'..msg.chat_id_,true)  
+Text = '\n ⋄ :  تم تعطيل امر تحويل'
+else
+Text = '\n ⋄ :  بالتاكيد تم تعطيل امر تحويل'
+end
+send(msg.chat_id_, msg.id_,Text) 
+end
+if text == 'ملصق' and not database:get(bot_id..'DRAGOON:change:sofi'..msg.chat_id_) then  
+if tonumber(msg.reply_to_message_id_) > 0 then
+function by_reply(extra, result, success)   
+if result.content_.photo_ then 
+local pn = result.content_.photo_.sizes_[1].photo_.persistent_id_
+Addsticker(msg,msg.chat_id_,pn,msg.sender_user_id_..'.png')
+end   
+end
+tdcli_function ({ ID = "GetMessage", chat_id_ = msg.chat_id_, message_id_ = tonumber(msg.reply_to_message_id_) }, by_reply, nil)
+end
+end
+if text == 'صوت' and not database:get(bot_id..'DRAGOON:change:sofi'..msg.chat_id_) then  
+if tonumber(msg.reply_to_message_id_) > 0 then
+function by_reply(extra, result, success)   
+if result.content_.voice_ then 
+local mr = result.content_.voice_.voice_.persistent_id_ 
+Addmp3(msg,msg.chat_id_,mr,msg.sender_user_id_..'.mp3')
+end   
+end
+tdcli_function ({ ID = "GetMessage", chat_id_ = msg.chat_id_, message_id_ = tonumber(msg.reply_to_message_id_) }, by_reply, nil)
+end
+end
+if text == 'بصمه' and not database:get(bot_id..'DRAGOON:change:sofi'..msg.chat_id_) then  
+if tonumber(msg.reply_to_message_id_) > 0 then
+function by_reply(extra, result, success)   
+if result.content_.audio_ then 
+local mr = result.content_.audio_.audio_.persistent_id_
+Addvoi(msg,msg.chat_id_,mr,msg.sender_user_id_..'.ogg')
+end   
+end
+tdcli_function ({ ID = "GetMessage", chat_id_ = msg.chat_id_, message_id_ = tonumber(msg.reply_to_message_id_) }, by_reply, nil)
+end
+end
+if text == 'صوره' and not database:get(bot_id..'DRAGOON:change:sofi'..msg.chat_id_) then  
+if tonumber(msg.reply_to_message_id_) > 0 then
+function by_reply(extra, result, success)   
+if result.content_.sticker_ then 
+local Str = result.content_.sticker_.sticker_.persistent_id_ 
+Addjpg(msg,msg.chat_id_,Str,msg.sender_user_id_..'.jpg')
+end   
+end
+tdcli_function ({ ID = "GetMessage", chat_id_ = msg.chat_id_, message_id_ = tonumber(msg.reply_to_message_id_) }, by_reply, nil)
+end
 end
 if text == ("مسح الاساسين") and CoSu(msg) then
 database:del(bot_id..'Basic:Constructor'..msg.chat_id_)
