@@ -2318,12 +2318,12 @@ database:del(bot_id..'text:ch:user')
 send(msg.chat_id_, msg.id_, " ⋄ :  تم مسح رساله الاشتراك ")
 return false  
 end
-if text and text:match("^وضع قناة الاشتراك ⋄ $") and DevSoFi(msg) then  
+if text and text:match("^وضع قناة الاشتراك ⋄$") and DevSoFi(msg) then  
 database:setex(bot_id.."add:ch:jm" .. msg.chat_id_ .. "" .. msg.sender_user_id_, 360, true)  
 send(msg.chat_id_, msg.id_, ' ⋄ :  حسنآ ارسل لي معرف القناة')
 return false  
 end
-if text == "تفعيل الاشتراك الاجباري ⋄ " and DevSoFi(msg) then  
+if text == "تفعيل الاشتراك الاجباري ⋄" and DevSoFi(msg) then  
 if database:get(bot_id..'add:ch:id') then
 local addchusername = database:get(bot_id..'add:ch:username')
 send(msg.chat_id_, msg.id_," ⋄ :  الاشتراك الاجباري مفعل \n ⋄ :  على القناة » ["..addchusername.."]")
@@ -2333,13 +2333,13 @@ send(msg.chat_id_, msg.id_," ⋄ :  اهلا عزيزي المطور \n ⋄ :  �
 end
 return false  
 end
-if text == "تعطيل الاشتراك الاجباري ⋄ " and DevSoFi(msg) then  
+if text == "تعطيل الاشتراك الاجباري ⋄" and DevSoFi(msg) then  
 database:del(bot_id..'add:ch:id')
 database:del(bot_id..'add:ch:username')
 send(msg.chat_id_, msg.id_, " ⋄ :  تم تعطيل الاشتراك الاجباري ")
 return false  
 end
-if text == "الاشتراك الاجباري ⋄ " and DevSoFi(msg) then  
+if text == "الاشتراك الاجباري ⋄" and DevSoFi(msg) then  
 if database:get(bot_id..'add:ch:username') then
 local addchusername = database:get(bot_id..'add:ch:username')
 send(msg.chat_id_, msg.id_, " ⋄ :  تم تفعيل الاشتراك الاجباري \n ⋄ :  على القناة » ["..addchusername.."]")
