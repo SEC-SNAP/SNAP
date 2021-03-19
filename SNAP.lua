@@ -7967,7 +7967,7 @@ end
 send(msg.chat_id_, msg.id_," ༯︙ تم مسح قائمه المنع")  
 end
 
-if text == "ق��ئمه المنع" and Manager(msg) then   
+if text == "قائمه المنع" and Manager(msg) then   
 local list = database:smembers(bot_id.."s00f41:List:Filter"..msg.chat_id_)  
 t = "\n ༯︙ قائمة المنع \n⊶────≺𝐒𝐍𝐏⁦≻────⊷\n"
 for k,v in pairs(list) do  
