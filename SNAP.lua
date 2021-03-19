@@ -21,29 +21,29 @@ file:write(serialized)
 file:close()  
 end  
 if not database:get(id_server..":token") then
-io.write('\27[0;31m\n ارسل لي توكن البوت الان ↓ :\naٴ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ٴ\n\27')
+io.write('\27[0;31m\n ارسل لي توكن البوت الان ↓ :\na⊶──────────≺𝐒𝐍𝐏⁦≻───────────⊷ ٴ\n\27')
 local token = io.read()
 if token ~= '' then
 local url , res = https.request('https://api.telegram.org/bot'..token..'/getMe')
 if res ~= 200 then
-print('\27[0;31mٴ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ٴ\n التوكن غير صحيح تاكد منه ثم ارسله')
+print('\27[0;31m⊶──────────≺𝐒𝐍𝐏⁦≻───────────⊷ ٴ\n التوكن غير صحيح تاكد منه ثم ارسله')
 else
-io.write('\27[0;31m تم حفظ التوكن بنجاح \naٴ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ٴ\n27[0;39;49m')
+io.write('\27[0;31m تم حفظ التوكن بنجاح \na⊶──────────≺𝐒𝐍𝐏⁦≻───────────⊷ ٴ\n27[0;39;49m')
 database:set(id_server..":token",token)
 end 
 else
-print('\27[0;35mٴ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ٴ ✺\n لم يتم حفظ التوكن ارسل لي التوكن الان')
+print('\27[0;35m⊶──────────≺𝐒𝐍𝐏⁦≻───────────⊷ ٴ \n لم يتم حفظ التوكن ارسل لي التوكن الان')
 end 
 os.execute('lua SNAP.lua')
 end
 if not database:get(id_server..":SUDO:ID") then
-io.write('\27[0;35m\n ارسل لي ايدي المطور الاساسي ↓ :\naٴ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ٴ\n\27[0;33;49m')
+io.write('\27[0;35m\n ارسل لي ايدي المطور الاساسي ↓ :\na⊶──────────≺𝐒𝐍𝐏⁦≻───────────⊷ ٴ\n\27[0;33;49m')
 local SUDOID = io.read()
 if SUDOID ~= '' then
-io.write('\27[1;35m تم حفظ ايدي المطور الاساسي \naٴ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ٴ\n27[0;39;49m')
+io.write('\27[1;35m تم حفظ ايدي المطور الاساسي \na⊶──────────≺𝐒𝐍𝐏⁦≻───────────⊷ ٴ\n27[0;39;49m')
 database:set(id_server..":SUDO:ID",SUDOID)
 else
-print('\27[0;31mٴ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ٴ ✺ ✺\n لم يتم حفظ ايدي المطور الاساسي ارسله مره اخره')
+print('\27[0;31m⊶──────────≺𝐒𝐍𝐏⁦≻───────────⊷ ٴ \n لم يتم حفظ ايدي المطور الاساسي ارسله مره اخره')
 end 
 os.execute('lua SNAP.lua')
 end
@@ -79,15 +79,15 @@ token="]]..database:get(id_server..":token")..[["
 while(true) do
 rm -fr ../.telegram-cli
 if [ ! -f ./tg ]; then
-echo "ٴ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ٴ ✺ ✺ ✺ ✺ ✺ ✺✺ ✺ ✺ ✺ ✺ ✺ ✺"
+echo "⊶──────────≺𝐒𝐍𝐏⁦≻───────────⊷ ⊶──────────≺𝐒𝐍𝐏⁦≻───────────⊷"
 echo "TG IS NOT FIND IN FILES BOT"
-echo "ٴ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ٴ ٴ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ٴ ✺"
+echo "⊶──────────≺𝐒𝐍𝐏⁦≻───────────⊷ ٴ ⊶──────────≺𝐒𝐍𝐏⁦≻───────────⊷ ٴ "
 exit 1
 fi
 if [ ! $token ]; then
-echo "ٴ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ٴ ٴ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺ ٴ ✺ ✺"
+echo "⊶──────────≺𝐒𝐍𝐏⁦≻───────────⊷ ٴ ⊶──────────≺𝐒𝐍𝐏⁦≻───────────⊷ ٴ "
 echo -e "\e[1;36mTOKEN IS NOT FIND IN FILE INFO.LUA \e[0m"
-echo "⊶────≺𝐒𝐍𝐏⁦≻────⊷ ✺ ✺ ✺ ✺✺ ✺ ✺ ✺ ✺ ✺ ✺ ✺✺ ✺"
+echo "⊶────≺𝐒𝐍𝐏⁦≻────⊷ ⊶──────────≺𝐒𝐍𝐏⁦≻───────────⊷"
 exit 1
 fi
 echo -e "\033[38;5;208m"
@@ -861,7 +861,7 @@ end
 return false
 end
 if DevSoFi(msg) then
-local bl = ' ༯︙ اهلا عزيزي آلمـطـور\n ༯︙ آنت آلمـطـور آلآسـآسـي للبوت\n✺  ✺  ✺  ✺  ✺  ✺  ✺  ✺ء\n ༯︙ تسـتطـيع‌‏ آلتحگم باوامر البوت\n ༯︙ من خلاال الكيبورت خاص بك\n ༯︙ قناة سورس البوت [اضغط هنا](t.me/iinzzz)'
+local bl = ' ༯︙ اهلا عزيزي آلمـطـور\n ༯︙ آنت آلمـطـور آلآسـآسـي للبوت\n⊶────≺𝐒𝐍𝐏⁦≻────⊷\n ༯︙ تسـتطـيع‌‏ آلتحگم باوامر البوت\n ༯︙ من خلاال الكيبورت خاص بك\n ༯︙ قناة سورس البوت [اضغط هنا](t.me/iinzzz)'
 local keyboard = {
 {'الاحصائيات ༯'},
 {'تعطيل التواصل ༯','تفعيل التواصل ༯'},
@@ -3749,7 +3749,7 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,' ༯︙ لا ����ستطيع استخدام البوت \n  ༯︙ يرجى الاشتراك بالقناه اولا \n  ༯︙ اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,' ༯︙ لا تستطيع استخدام البوت \n  ༯︙ يرجى الاشتراك بالقناه اولا \n  ༯︙ اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
@@ -5013,7 +5013,7 @@ return false
 end
 if text == ("الثانويين") and SudoBot(msg) then
 local list = database:smembers(bot_id.."Dev:SoFi:2")
-t = "\n༯︙ قائمة مطورين الثانويين للبوت \nٴ≪✺ ✺ ✺ ✺ ✺ 𝐃𝐑𝐠 ✺  ✺ ✺ ✺ ✺≫ٴ\n"
+t = "\n༯︙ قائمة مطورين الثانويين للبوت \n⊶────≺𝐒𝐍𝐏⁦≻────⊷\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -6519,7 +6519,7 @@ if Can_or_NotCan(result.id_, msg.chat_id_) == true then
 send(msg.chat_id_, msg.id_, '\n ༯︙ عذرا لا تستطيع كتم ( '..Rutba(result.id_,msg.chat_id_)..' )')
 else
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_," ༯︙ عذرا عزيزي ��لمستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_," ༯︙ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
 return false 
 end      
 database:sadd(bot_id..'Muted:User'..msg.chat_id_, result.id_)
@@ -10753,7 +10753,7 @@ local Name_Bot = (database:get(bot_id..'Name:Bot') or 'سنـاب')
 if not database:get(bot_id.."Fun_Bots:"..msg.chat_id_) then
 if text ==  ""..Name_Bot..' شنو رئيك بهاذا' and tonumber(msg.reply_to_message_id_) > 0 then     
 function FunBot(extra, result, success) 
-local Fun = {'لوكي وزاحف من ساع زحفلي وحضرته 😒','خوش ولد و ورده مال الله 💋🙄','يلعب ع البنات 🙄', 'ولد زايعته الكاع 😶🙊','صاك يخبل ومعضل ','محلو وشواربه جنها مكناسه 😂🤷🏼‍♀️','اموت عليه 🌝','هوه غير ا��حب مال اني 🤓❤️','مو خوش ولد صراحه ☹️','ادبسز وميحترم البنات  ', 'فد واحد قذر 🙄😒','ماطيقه كل ما اكمشه ريحته جنها بخاخ بف باف مال حشرات 😂🤷‍♀️','مو خوش ولد 🤓' } 
+local Fun = {'لوكي وزاحف من ساع زحفلي وحضرته 😒','خوش ولد و ورده مال الله 💋🙄','يلعب ع البنات 🙄', 'ولد زايعته الكاع 😶🙊','صاك يخبل ومعضل ','محلو وشواربه جنها مكناسه 😂🤷🏼‍♀️','اموت عليه 🌝','هوه غير الحب مال اني 🤓❤️','مو خوش ولد صراحه ☹️','ادبسز وميحترم البنات  ', 'فد واحد قذر 🙄😒','ماطيقه كل ما اكمشه ريحته جنها بخاخ بف باف مال حشرات 😂🤷‍♀️','مو خوش ولد 🤓' } 
 send(msg.chat_id_, result.id_,''..Fun[math.random(#Fun)]..'')   
 end   
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunBot, nil)
