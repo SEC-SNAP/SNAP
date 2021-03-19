@@ -863,23 +863,23 @@ end
 if DevSoFi(msg) then
 local bl = ' ⋄ :  اهلا عزيزي آلمـطـور\n ⋄ :  آنت آلمـطـور آلآسـآسـي للبوت\n⊶────≺𝐒𝐍𝐏⁦≻────⊷\n ⋄ :  تسـتطـيع‌‏ آلتحگم باوامر البوت\n ⋄ :  من خلاال الكيبورت خاص بك\n ⋄ :  قناة سورس البوت [اضغط هنا](t.me/iinzzz)'
 local keyboard = {
-{'الاحصائيات ⌔ '},
-{'تعطيل التواصل ⌔ ','تفعيل التواصل ⌔ '},
-{'ضع اسم للبوت ⌔ ','المطورين ⌔ ','قائمه العام ⌔ '},
-{'المشتركين ⌔ ','الكروبات ⌔ '},
-{'ضع كليشه ستارت ⌔ ','حذف كليشه ستارت ⌔ '},
-{'اذاعه ⌔ ','اذاعه خاص ⌔ '},
-{'اذاعه بالتثبيت ⌔ ','قائمه الكتم العام ⌔ '},
-{'تغير رساله الاشتراك','حذف رساله الاشتراك ⌔ ','تغير الاشتراك'},
-{'اذاعه بالتوجيه ⌔ ','اذاعه بالتوجيه خاص ⌔ '},
-{'تفعيل الاشتراك الاجباري ⌔ ','تعطيل الاشتراك الاجباري ⌔ '},
-{'الاشتراك الاجباري ⌔ ','وضع قناة الاشتراك ⌔ '},
-{'تفعيل البوت الخدمي ⌔ ','تعطيل البوت الخدمي ⌔ '},
-{'تنظيف الكروبات ⌔ ','تنظيف المشتركين ⌔ '},
-{'جلب نسخه الاحتياطيه ⌔ '},
-{'تحديث السورس ⌔ ','الاصدار ⌔ '},
-{'معلومات السيرفر ⌔ '},
-{'الغاء ⌔ '},
+{'الاحصائيات⌔'},
+{'تعطيل التواصل⌔','تفعيل التواصل⌔'},
+{'ضع اسم للبوت⌔','المطورين⌔','قائمه العام⌔'},
+{'المشتركين⌔','الكروبات⌔'},
+{'ضع كليشه ستارت⌔','حذف كليشه ستارت⌔'},
+{'اذاعه⌔','اذاعه خاص⌔'},
+{'اذاعه بالتثبيت⌔','قائمه الكتم العام⌔'},
+{'تغير رساله الاشتراك','حذف رساله الاشتراك⌔','تغير الاشتراك'},
+{'اذاعه بالتوجيه⌔','اذاعه بالتوجيه خاص⌔'},
+{'تفعيل الاشتراك الاجباري⌔','تعطيل الاشتراك الاجباري⌔'},
+{'الاشتراك الاجباري⌔','وضع قناة الاشتراك⌔'},
+{'تفعيل البوت الخدمي⌔','تعطيل البوت الخدمي⌔'},
+{'تنظيف الكروبات⌔','تنظيف المشتركين⌔'},
+{'جلب نسخه الاحتياطيه⌔'},
+{'تحديث السورس⌔','الاصدار⌔'},
+{'معلومات السيرفر⌔'},
+{'الغاء⌔'},
 }
 send_inline_key(msg.chat_id_,bl,keyboard)
 else
@@ -977,7 +977,7 @@ end,nil)
 end,nil)
 end,nil)
 end 
-if text == 'تفعيل التواصل ⌔ ' and DevSoFi(msg) then  
+if text == 'تفعيل التواصل⌔' and DevSoFi(msg) then  
 if database:get(bot_id..'Tuasl:Bots') then
 database:del(bot_id..'Tuasl:Bots') 
 Text = '\n ⋄ :  تم تفعيل التواصل ' 
@@ -986,7 +986,7 @@ Text = '\n ⋄ :  بالتاكيد تم تفعيل التواصل '
 end
 send(msg.chat_id_, msg.id_,Text) 
 end
-if text == 'تعطيل التواصل ⌔ ' and DevSoFi(msg) then  
+if text == 'تعطيل التواصل⌔' and DevSoFi(msg) then  
 if not database:get(bot_id..'Tuasl:Bots') then
 database:set(bot_id..'Tuasl:Bots',true) 
 Text = '\n ⋄ :  تم تعطيل التواصل' 
@@ -995,7 +995,7 @@ Text = '\n ⋄ :  بالتاكيد تم تعطيل التواصل'
 end
 send(msg.chat_id_, msg.id_,Text) 
 end
-if text == 'تفعيل البوت الخدمي ⌔ ' and DevSoFi(msg) then  
+if text == 'تفعيل البوت الخدمي⌔' and DevSoFi(msg) then  
 if database:get(bot_id..'Free:Bots') then
 database:del(bot_id..'Free:Bots') 
 Text = '\n ⋄ :  تم تفعيل البوت الخدمي ' 
@@ -1004,7 +1004,7 @@ Text = '\n ⋄ :  بالتاكيد تم تفعيل البوت الخدمي '
 end
 send(msg.chat_id_, msg.id_,Text) 
 end
-if text == 'تعطيل البوت الخدمي ⌔ ' and DevSoFi(msg) then  
+if text == 'تعطيل البوت الخدمي⌔' and DevSoFi(msg) then  
 if not database:get(bot_id..'Free:Bots') then
 database:set(bot_id..'Free:Bots',true) 
 Text = '\n ⋄ :  تم تعطيل البوت الخدمي' 
@@ -1014,7 +1014,7 @@ end
 send(msg.chat_id_, msg.id_,Text) 
 end
 if text and database:get(bot_id..'Start:Bots') then
-if text == 'الغاء' or text == 'الغاء ⌔ ' then   
+if text == 'الغاء' or text == 'الغاء⌔' then   
 send(msg.chat_id_, msg.id_,' ⋄ :  الغاء حفظ كليشه ستارت')
 database:del(bot_id..'Start:Bots') 
 return false
@@ -1024,16 +1024,16 @@ send(msg.chat_id_, msg.id_,' ⋄ :  تم حفظ كليشه ستارت')
 database:del(bot_id..'Start:Bots') 
 return false
 end
-if text == 'ضع كليشه ستارت ⌔ ' and DevSoFi(msg) then 
+if text == 'ضع كليشه ستارت⌔' and DevSoFi(msg) then 
 database:set(bot_id..'Start:Bots',true) 
 send(msg.chat_id_, msg.id_,' ⋄ :  ارسل لي الكليشه الان')
 return false
 end
-if text == 'حذف كليشه ستارت ⌔ ' and DevSoFi(msg) then 
+if text == 'حذف كليشه ستارت⌔' and DevSoFi(msg) then 
 database:del(bot_id..'Start:Bot') 
 send(msg.chat_id_, msg.id_,' ⋄ :  تم حذف كليشه ستارت')
 end
-if text == 'معلومات السيرفر ⌔ ' and DevSoFi(msg) then 
+if text == 'معلومات السيرفر⌔' and DevSoFi(msg) then 
 send(msg.chat_id_, msg.id_, io.popen([[
 linux_version=`lsb_release -ds`
 memUsedPrc=`free -m | awk 'NR==2{printf "%sMB/%sMB {%.2f%}\n", $3,$2,$3*100/$2 }'`
@@ -1049,43 +1049,43 @@ echo '*———————————~*\n⋄ ✔{ مـده تـشغيـل ا�
 ]]):read('*all'))  
 end
 
-if text == 'تحديث السورس ⌔ ' and DevSoFi(msg) then 
+if text == 'تحديث السورس⌔' and DevSoFi(msg) then 
 os.execute('rm -rf SNAP.lua')
 os.execute('wget wget https://raw.githubusercontent.com/SEC-SNAP/SNAP/main/SNAP.lua')
 send(msg.chat_id_, msg.id_,' ⋄ :  تم تحديث السورس \n ⋄ :  لديك اخر اصدار لسورس سنـاب\n ⋄ :  الاصدار » { v 1}')
 dofile('SNAP.lua')  
 end
-if text == 'الاصدار ⌔ ' and DevSoFi(msg) then 
+if text == 'الاصدار⌔' and DevSoFi(msg) then 
 database:del(bot_id..'Srt:Bot') 
 send(msg.chat_id_, msg.id_,' ⋄ :  اصدار سورس سنـاب \n ⋄ :  الاصدار »{ v 1}')
 end
-if text == "ضع اسم للبوت ⌔ " and DevSoFi(msg) then  
+if text == "ضع اسم للبوت⌔" and DevSoFi(msg) then  
 database:setex(bot_id..'Set:Name:Bot'..msg.sender_user_id_,300,true) 
 send(msg.chat_id_, msg.id_," ⋄ :  ارسل اليه الاسم الان ")
 return false
 end
-if text == 'الاحصائيات ⌔ ' and DevSoFi(msg) then 
+if text == 'الاحصائيات⌔' and DevSoFi(msg) then 
 local Groups = database:scard(bot_id..'Chek:Groups')  
 local Users = database:scard(bot_id..'User_Bot')  
 Text = ' الاحصائيات ⋄  \n'..' ⋄ :  عدد الكروبات » {'..Groups..'}'..'\n ⋄ :   عدد المشتركين » {'..Users..'}'
 send(msg.chat_id_, msg.id_,Text) 
 return false
 end
-if text == 'المشتركين ⌔ ' and DevSoFi(msg) then 
+if text == 'المشتركين⌔' and DevSoFi(msg) then 
 local Groups = database:scard(bot_id..'Chek:Groups')  
 local Users = database:scard(bot_id..'User_Bot')  
 Text = '\n ⋄ :  المشتركين»{`'..Users..'`}'
 send(msg.chat_id_, msg.id_,Text) 
 return false
 end
-if text == 'الكروبات ⌔ ' and DevSoFi(msg) then 
+if text == 'الكروبات⌔' and DevSoFi(msg) then 
 local Groups = database:scard(bot_id..'Chek:Groups')  
 local Users = database:scard(bot_id..'User_Bot')  
 Text = '\n ⋄ :  الكروبات»{`'..Groups..'`}'
 send(msg.chat_id_, msg.id_,Text) 
 return false
 end
-if text == ("المطورين ⌔ ") and DevSoFi(msg) then
+if text == ("المطورين⌔") and DevSoFi(msg) then
 local list = database:smembers(bot_id..'Sudo:User')
 t = "\n ⋄ :  قائمة المطورين \n⊶────≺𝐒𝐍𝐏⁦≻────⊷\n"
 for k,v in pairs(list) do
@@ -1101,7 +1101,7 @@ t = " ⋄ :  لا يوجد مطورين"
 end
 send(msg.chat_id_, msg.id_, t)
 end
-if text == ("قائمه العام ⌔ ") and DevSoFi(msg) then
+if text == ("قائمه العام⌔") and DevSoFi(msg) then
 local list = database:smembers(bot_id..'GBan:User')
 t = "\n ⋄ :  قائمه المحظورين عام \n⊶────≺𝐒𝐍𝐏⁦≻────⊷\n"
 for k,v in pairs(list) do
@@ -1118,7 +1118,7 @@ end
 send(msg.chat_id_, msg.id_, t)
 return false
 end
-if text == ("قائمه الكتم العام ⌔ ") and DevSoFi(msg) then
+if text == ("قائمه الكتم العام⌔") and DevSoFi(msg) then
 local list = database:smembers(bot_id..'Gmute:User')
 t = "\n ⋄ :  قائمة المكتومين عام \n⊶────≺𝐒𝐍𝐏⁦≻────⊷\n"
 for k,v in pairs(list) do
@@ -1135,35 +1135,35 @@ end
 send(msg.chat_id_, msg.id_, t)
 return false
 end
-if text=="اذاعه خاص ⌔ " and msg.reply_to_message_id_ == 0 and DevSoFi(msg) then 
+if text=="اذاعه خاص⌔" and msg.reply_to_message_id_ == 0 and DevSoFi(msg) then 
 database:setex(bot_id.."Send:Bc:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
 send(msg.chat_id_, msg.id_," ⋄ :  ارسل الان اذاعتك؟ \n ⋄ :  للخروج ارسل الغاء ")
 return false
 end 
-if text=="اذاعه ⌔ " and msg.reply_to_message_id_ == 0 and DevSoFi(msg) then 
+if text=="اذاعه⌔" and msg.reply_to_message_id_ == 0 and DevSoFi(msg) then 
 database:setex(bot_id.."Send:Bc:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
 send(msg.chat_id_, msg.id_," ⋄ :  ارسل الان اذاعتك؟ \n ⋄ :  للخروج ارسل الغاء ")
 return false
 end  
-if text=="اذاعه بالتثبيت ⌔ " and msg.reply_to_message_id_ == 0 and DevSoFi(msg) then 
+if text=="اذاعه بالتثبيت⌔" and msg.reply_to_message_id_ == 0 and DevSoFi(msg) then 
 database:setex(bot_id.."Bc:Grops:Pin" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
 send(msg.chat_id_, msg.id_," ⋄ :  ارسل الان اذاعتك؟ \n ⋄ :  للخروج ارسل الغاء ")
 return false
 end 
-if text=="اذاعه بالتوجيه ⌔ " and msg.reply_to_message_id_ == 0  and DevSoFi(msg) then 
+if text=="اذاعه بالتوجيه⌔" and msg.reply_to_message_id_ == 0  and DevSoFi(msg) then 
 database:setex(bot_id.."Send:Fwd:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
 send(msg.chat_id_, msg.id_," ⋄ :  ارسل لي التوجيه الان")
 return false
 end 
-if text=="اذاعه بالتوجيه خاص ⌔ " and msg.reply_to_message_id_ == 0  and DevSoFi(msg) then 
+if text=="اذاعه بالتوجيه خاص⌔" and msg.reply_to_message_id_ == 0  and DevSoFi(msg) then 
 database:setex(bot_id.."Send:Fwd:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
 send(msg.chat_id_, msg.id_," ⋄ :  ارسل لي التوجيه الان")
 return false
 end 
-if text == 'جلب نسخه الاحتياطيه ⌔ ' and DevSoFi(msg) then 
+if text == 'جلب نسخه الاحتياطيه⌔' and DevSoFi(msg) then 
 GetFile_Bot(msg)
 end
-if text == "تنظيف المشتركين ⌔ " and DevSoFi(msg) then 
+if text == "تنظيف المشتركين⌔" and DevSoFi(msg) then 
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
@@ -1199,7 +1199,7 @@ end,nil)
 end
 return false
 end
-if text == "تنظيف الكروبات ⌔ " and DevSoFi(msg) then 
+if text == "تنظيف الكروبات⌔" and DevSoFi(msg) then 
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
