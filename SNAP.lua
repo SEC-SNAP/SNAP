@@ -490,14 +490,14 @@ function Reply_Status(msg,user_id,status,text)
 tdcli_function ({ID = "GetUser",user_id_ = user_id},function(arg,data) 
 if data.first_name_ ~= false then
 local UserName = (data.username_ or "iinzzz")
-local NameUser = "℘꞉ بواسطه » ["..data.first_name_.."](T.me/"..UserName..")"
-local NameUserr = "℘꞉ اسم المستخدم » ["..data.first_name_.."](T.me/"..UserName..")"
+local NameUser = "⌯ ≫ بواسطه » ["..data.first_name_.."](T.me/"..UserName..")"
+local NameUserr = "⌯ ≫ اسم المستخدم » ["..data.first_name_.."](T.me/"..UserName..")"
 if status == "reply" then
 send(msg.chat_id_, msg.id_,NameUserr.."\n"..text)
 return false
 end
 else
-send(msg.chat_id_, msg.id_,"℘꞉ الحساب محذوف يرجى استخدام الامر بصوره صحيحه")
+send(msg.chat_id_, msg.id_,"⌯ ≫ الحساب محذوف يرجى استخدام الامر بصوره صحيحه")
 end
 end,nil)   
 end 
