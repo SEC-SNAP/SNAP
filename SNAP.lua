@@ -2601,22 +2601,11 @@ end
 end,nil)   
 end
 -----------
-if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then       
-local Text =[[
-╭ Source & Snap ╮
+if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then  
+Text = [[
+╭• [𝘾𝙝𝙖𝙣𝙣𝙚𝙡 𝙎𝙣𝙖𝙥](t.me/iinzzz) •╮
 ]]
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{{text =  '𝘾𝙝𝙖𝙣𝙣𝙚𝙡 𝙎𝙣𝙖𝙥',url="t.me/iinzzz"}},
-},
-{
-{{text =  '𝘿𝙚𝙫 𝙎𝙣𝙖𝙥',url="t.me/Z22SS"}},
-},
-}
-local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-return false
+send(msg.chat_id_, msg.id_,Text)
 end
 --------------------------------------------------------------------------------------------------------------
 if Chat_Type == 'GroupBot' and ChekAdd(msg.chat_id_) == true then
@@ -11022,24 +11011,17 @@ database:set(bot_id..'lock:reply'..msg.chat_id_,true)
 Text = '\n ⌯ ≫ تم تعطيل الردود'
 send(msg.chat_id_, msg.id_,Text) 
 end
-if text == 'رابط حذف' or text == 'رابط الحذف' then
-data = JSON.decode(url)
-return false 
-end
-local Text =[[
+if text == 'رابط الحذف' or text == 'رابط حذف' then
+t =[[
 * 𓆩 اهلا بك عزيزي اليك رابط حذف تليكرام 𓆪 *
+⋆ ━━━━━━𝙎𝙋━━━━━━ ⋆
+ ● رابط حذف  [Telegram](https://my.telegram.org/auth?to=delete) ܁
+ ● رابط حذف [instagram](https://www.instagram.com/accounts/login/?next=/accounts/remove/request/permanent/) ܁
+ ● رابط حذف [Facebook](https://www.facebook.com/help/deleteaccount) ܁
+ ● رابط حذف [Snspchat](https://accounts.snapchat.com/accounts/login?continue=https%3A%2F%2Faccounts.snapchat.com%2Faccounts%2Fdeleteaccount) ܁
 ]]
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{{text =  '⌯ رابط الحذف هنا ⌯',url="my.telegram.org/auth?to=delete"}},
-},
-{
-{{text =  '⌯ قناة سورس البوت ⌯',url="t.me/iinzzz"}},
-},
-}
-local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+send(msg.chat_id_, msg.id_,t) 
+return false
 end
 if text and text:match('^الحساب (%d+)$') then
 local id = text:match('^الحساب (%d+)$')
