@@ -2601,7 +2601,10 @@ end
 end,nil)   
 end
 -----------
-if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then       
+if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then      
+data = JSON.decode(url)
+return false 
+end 
 local Text =[[
 ╭ Source & Snap ╮
 ]]
@@ -11022,6 +11025,9 @@ Text = '\n ⌯ ≫ تم تعطيل الردود'
 send(msg.chat_id_, msg.id_,Text) 
 end
 if text == 'رابط حذف' or text == 'رابط الحذف' then
+data = JSON.decode(url)
+return false 
+end
 local Text =[[
 * 𓆩 اهلا بك عزيزي اليك رابط حذف تليكرام 𓆪 *
 ]]
