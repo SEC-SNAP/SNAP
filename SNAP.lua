@@ -2602,11 +2602,11 @@ end,nil)
 end
 -----------
 if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then       
-local Text ='سورس'
+local Text ='*سورس سناب الرسمي*'
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text =  '𝘾𝙝𝙖𝙣𝙣𝙚𝙡 ',url="t.me/iinzzz"}},
-{{text =  '𝘿𝙚𝙫 ',url="t.me/Z22SS"}},
+{{text =  '𝘾𝙝𝙖𝙣𝙣𝙚𝙡 𝙎𝙣𝙖𝙥',url="t.me/iinzzz"}},
+{{text =  '𝘿𝙚𝙫 𝙎𝙣𝙖𝙥',url="t.me/Z22SS"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text='..URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
