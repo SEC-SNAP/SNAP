@@ -2601,8 +2601,8 @@ end
 end,nil)   
 end
 -----------
-if text == 'السورس' or text == 'سورس سناب' or text == 'ياسورس' or text == 'يا سورس' then       
-local Text ='*سورس سناب الرسمي*'
+if text == 'السورس' or text == 'سورس سناب' or text == 'ياسورس' or text == 'source' then       
+local Text ='سورس سناب الرسمي'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text =  '𝘾𝙝𝙖𝙣𝙣𝙚𝙡 𝙎𝙣𝙖𝙥',url="t.me/iinzzz"}},
