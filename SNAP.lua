@@ -2606,7 +2606,7 @@ local Text ='𓄼𝙎𝙤𝙐𝙧𝙎𝙚 𝙎𝙣𝙖𝙥𓄹'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{{text =  '𝘾𝙝𝙖𝙣𝙣𝙚𝙡 𝙎𝙣𝙖𝙋',url="t.me/"iinzzz}},
+{{text =  '𝘾𝙝𝙖𝙣𝙣𝙚𝙡 𝙎𝙣𝙖𝙋',url="t.me/iinzzz"}},
 },
 {
 {{text =  '𝘿𝙚𝙫 𝙎𝙣𝙖𝙥',url="t.me/Z22SS"}},
