@@ -2601,7 +2601,7 @@ end
 end,nil)   
 end
 -----------
-if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then       
+if text == 'السورس' or text == 'سورس سناب' or text == 'ياسورس' or text == 'يا سورس' then       
 local Text ='*سورس سناب الرسمي*'
 keyboard = {} 
 keyboard.inline_keyboard = {
