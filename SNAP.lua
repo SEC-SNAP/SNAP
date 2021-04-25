@@ -2603,6 +2603,8 @@ end
 -----------
 if text == 'السورس' or text == 'سورس' or text == 'ياسورس' then       
 local Text = '𓄼𝙎𝙤𝙐𝙧𝙎𝙚 𝙎𝙣𝙖𝙥𓄹'
+endreturn false
+end
 keyboard = {} 
 keyboard.inline_keyboard = {
 }
