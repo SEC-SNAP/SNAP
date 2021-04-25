@@ -2601,11 +2601,15 @@ end
 end,nil)   
 end
 -----------
-if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then  
-Text = [[
-╭• [𝘾𝙝𝙖𝙣𝙣𝙚𝙡 𝙎𝙣𝙖𝙥](t.me/iinzzz) •╮
-]]
-send(msg.chat_id_, msg.id_,Text)
+if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then       
+local Text ='𓄼𝙎𝙤𝙐𝙧𝙎𝙚 𝙎𝙣𝙖𝙥𓄹'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text =  '𝘾𝙝𝙖𝙣𝙣𝙚𝙡 𝙎𝙣𝙖𝙋',url="t.me/"iinzzz}},
+{{text =  '𝘿𝙚𝙫 𝙎𝙣𝙖𝙥',url="t.me/Z22SS"}},
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text='..URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 --------------------------------------------------------------------------------------------------------------
 if Chat_Type == 'GroupBot' and ChekAdd(msg.chat_id_) == true then
@@ -10203,7 +10207,7 @@ local List = {
 [[
 ┌ 𝐔𝐒𝐄𝐑 𖤱 #username 𖦴 .
 ├ 𝐌𝐒𝐆 𖤱 #msgs 𖦴 .
-├ 𝐒??𝐀 𖤱 #stast 𖦴 .
+├ 𝐒??𝐀 ?? #stast 𖦴 .
 └ 𝐈𝐃 𖤱 #id 𖦴 .
 ]],
 [[
