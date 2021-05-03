@@ -12474,6 +12474,10 @@ keyboard.inline_keyboard = {
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
 --- callback added
+if text == 'م1' or text == 'م2' or text == 'م3' or text == 'م4' or text == 'م5' then
+send(msg.chat_id_, msg.id_,"مرحبا . اكتب `الاوامر` وتحكم في الكيبورد الكلايش")
+return false
+end
 if Text == '/add' then
 if not Constructor(data) then
 local notText = '✧ عذرا الاوامر هذه لا تخصك'
