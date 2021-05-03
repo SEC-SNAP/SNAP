@@ -8011,7 +8011,7 @@ end
 NUM_MSG_MAX = database:hget(bot_id.."flooding:settings:"..msg.chat_id_,"floodmax") or 0
 local text = 
 '\n⚙️∫𝙶𝚁𝙾𝚄𝙿 𝚂𝙴𝚃𝚃𝙸𝙽𝙶𝚂'..
-'\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ '..
+'\n≪─━─━𝙎𝙉━─━─≫'..
 '\n ✧∫ اعدادات الكروب كتالي √↓'..
 '\nء≪━─━─━𝙎𝙉━─━─━≫'..
 '\n ✧∫  علامة ال {🔓} تعني مفعل'..
@@ -8173,17 +8173,16 @@ end
 if text == "تفعيل رابط" or text == 'تفعيل الرابط' then
 if Mod(msg) then  
 database:set(bot_id.."Link_Group:status"..msg.chat_id_,true) 
-send(msg.chat_id_, msg.id_," 🟢︙ تم تفعيل الرابط") 
+send(msg.chat_id_, msg.id_,"✧∫ تم تفعيل الرابط ✓") 
 return false  
 end
 end
 if text == "تعطيل رابط" or text == 'تعطيل الرابط' then
 if Mod(msg) then  
 database:del(bot_id.."Link_Group:status"..msg.chat_id_) 
-send(msg.chat_id_, msg.id_," 🔴︙ تم تعطيل الرابط") 
+send(msg.chat_id_, msg.id_,"✧∫ تم تعطيل الرابط ✘") 
 return false end
 end
-
 if text == 'المطور' or text == 'مطور' then
 local TEXT_SUDO = database:get(bot_id..'TEXT_SUDO')
 if TEXT_SUDO then 
@@ -8196,7 +8195,6 @@ end,nil)
 end
 end
 ---------------------
-
 if text == "تفعيل صورتي" or text == 'تفعيل الصوره' then
 if Constructor(msg) then  
 database:set(bot_id.."my_photo:status"..msg.chat_id_,true) 
@@ -8213,19 +8211,19 @@ end
 if text == "الرابط" then 
 local status_Link = database:get(bot_id.."Link_Group:status"..msg.chat_id_)
 if not status_Link then
-send(msg.chat_id_, msg.id_,"⚠️∫ الرابط معطل") 
+send(msg.chat_id_, msg.id_,"الرابط معطل ✘") 
 return false  
 end
 tdcli_function({ID ="GetChat",chat_id_=msg.chat_id_},function(arg,ta) 
 local link = database:get(bot_id.."Private:Group:Link"..msg.chat_id_)            
 if link then                              
-send(msg.chat_id_,msg.id_,'🌐∫ 𝙻𝙸𝙽𝙺 𝙶𝚁𝙾𝚄𝙿.\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n ['..ta.title_..']('..link..')')                          
+send(msg.chat_id_,msg.id_,'- 𝙇𝙞𝙣𝙠 ⇩\n≪━━━𝙎𝙉━━━≫\n ['..ta.title_..']('..link..')')                          
 else                
 local linkgpp = json:decode(https.request('https://api.telegram.org/bot'..token..'/exportChatInviteLink?chat_id='..msg.chat_id_))
 if linkgpp.ok == true then 
-linkgp = '🌐∫ 𝙻𝙸𝙽𝙺 𝙶𝚁𝙾𝚄𝙿.\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n ['..ta.title_..']('..linkgpp.result..')'
+linkgp = '- 𝙇𝙞𝙣𝙠 ⇩\n≪━━━𝙎𝙉━━━≫\n ['..ta.title_..']('..linkgpp.result..')'
 else
-linkgp = '♻️∫ لا يوجد رابط ارسل ضع رابط'
+linkgp = 'لا يوجد رابط ارسل ` ضع رابط` لعمل رابط'
 end  
 send(msg.chat_id_, msg.id_,linkgp)              
 end      
@@ -11154,176 +11152,10 @@ local Teext = text:match("^تغير رد العضو (.*)$")
 database:set(bot_id.."Memp:Rd"..msg.chat_id_,Teext)
 send(msg.chat_id_, msg.id_," ✧∫ تم تغير رد العضو الى » "..Teext)
 end
-
-if text and text:match("^(.*)$") then
-if database:get(bot_id..'help'..msg.sender_user_id_) == 'true' then
-send(msg.chat_id_, msg.id_, ' ✧∫ تم حفظ الكليشه')
-database:del(bot_id..'help'..msg.sender_user_id_)
-database:set(bot_id..'help_text',text)
+if text == 'م1' or text == 'م2' or text == 'م3' or text == 'م4' or text == 'م5' then
+send(msg.chat_id_, msg.id_,"مرحبا . اكتب `الاوامر` وتحكم في الكيبورد الكلايش")
 return false
 end
-end
-if text and text:match("^(.*)$") then
-if database:get(bot_id..'help1'..msg.sender_user_id_) == 'true' then
-send(msg.chat_id_, msg.id_, ' ✧∫ تم حفظ الكليشه')
-database:del(bot_id..'help1'..msg.sender_user_id_)
-database:set(bot_id..'help1_text',text)
-return false
-end
-end
-if text and text:match("^(.*)$") then
-if database:get(bot_id..'help2'..msg.sender_user_id_) == 'true' then
-send(msg.chat_id_, msg.id_, ' ✧∫ تم حفظ الكليشه')
-database:del(bot_id..'help2'..msg.sender_user_id_)
-database:set(bot_id..'help2_text',text)
-return false
-end
-end
-
-if text and text:match("^(.*)$") then
-if database:get(bot_id..'help3'..msg.sender_user_id_) == 'true' then
-send(msg.chat_id_, msg.id_, ' ✧∫ تم حفظ الكليشه')
-database:del(bot_id..'help3'..msg.sender_user_id_)
-database:set(bot_id..'help3_text',text)
-return false
-end
-end
-if text and text:match("^(.*)$") then
-if database:get(bot_id..'help4'..msg.sender_user_id_) == 'true' then
-send(msg.chat_id_, msg.id_, ' ✧∫ تم حفظ الكليشه')
-database:del(bot_id..'help4'..msg.sender_user_id_)
-database:set(bot_id..'help4_text',text)
-return false
-end
-end
-if text and text:match("^(.*)$") then
-if database:get(bot_id..'help5'..msg.sender_user_id_) == 'true' then
-send(msg.chat_id_, msg.id_, ' ✧∫ تم حفظ الكليشه')
-database:del(bot_id..'help5'..msg.sender_user_id_)
-database:set(bot_id..'help5_text',text)
-return false
-end
-end
-if text and text:match("^(.*)$") then
-if database:get(bot_id..'help6'..msg.sender_user_id_) == 'true' then
-send(msg.chat_id_, msg.id_, ' ✧∫ تم حفظ الكليشه')
-database:del(bot_id..'help6'..msg.sender_user_id_)
-database:set(bot_id..'help6_text',text)
-return false
-end
-end
-if text and text:match("^(.*)$") then
-if database:get(bot_id..'help7'..msg.sender_user_id_) == 'true' then
-send(msg.chat_id_, msg.id_, ' ✧∫ تم حفظ الكليشه')
-database:del(bot_id..'help7'..msg.sender_user_id_)
-database:set(bot_id..'help7_text',text)
-return false
-end
-end
-if text and text:match("^(.*)$") then
-if database:get(bot_id..'help8'..msg.sender_user_id_) == 'true' then
-send(msg.chat_id_, msg.id_, ' ✧∫ تم حفظ الكليشه')
-database:del(bot_id..'help8'..msg.sender_user_id_)
-database:set(bot_id..'help8_text',text)
-return false
-end
-end
-if text and text:match("^(.*)$") then
-if database:get(bot_id..'help9'..msg.sender_user_id_) == 'true' then
-send(msg.chat_id_, msg.id_, ' ✧∫ تم حفظ الكليشه')
-database:del(bot_id..'help9'..msg.sender_user_id_)
-database:set(bot_id..'help9_text',text)
-return false
-end
-end
-if text and text:match("^(.*)$") then
-if database:get(bot_id..'help10'..msg.sender_user_id_) == 'true' then
-send(msg.chat_id_, msg.id_, ' ✧∫ تم حفظ الكليشه')
-database:del(bot_id..'help10'..msg.sender_user_id_)
-database:set(bot_id..'help10_text',text)
-return false
-end
-end
-
-if text == 'استعاده الاوامر' and Devmode(msg) then
-database:del(bot_id..'help_text')
-database:del(bot_id..'help1_text')
-database:del(bot_id..'help2_text')
-database:del(bot_id..'help3_text')
-database:del(bot_id..'help4_text')
-database:del(bot_id..'help5_text')
-database:del(bot_id..'help6_text')
-database:del(bot_id..'help7_text')
-database:del(bot_id..'help8_text')
-database:del(bot_id..'help9_text')
-database:del(bot_id..'help10_text')
-send(msg.chat_id_, msg.id_, ' ✧∫ تم استعادة الاوامر القديمه')
-end
-if text == 'تغير امر الاوامر' and Devmode(msg) then
-send(msg.chat_id_, msg.id_, ' ✧∫ الان يمكنك ارسال الكليشه الاوامر')
-database:set(bot_id..'help'..msg.sender_user_id_,'true')
-return false 
-end
-if text == 'تغير امر م1' and Devmode(msg) then
-send(msg.chat_id_, msg.id_, ' ✧∫ الان يمكنك ارسال الكليشه م1')
-database:set(bot_id..'help1'..msg.sender_user_id_,'true')
-return false 
-end
-
-if text == 'تغير امر م2' and Devmode(msg) then
-send(msg.chat_id_, msg.id_, ' ✧∫ الان يمكنك ارسال الكليشه م2')
-database:set(bot_id..'help2'..msg.sender_user_id_,'true')
-return false 
-end
-
-if text == 'تغير امر م3' and Devmode(msg) then
-send(msg.chat_id_, msg.id_, ' ✧∫ الان يمكنك ارسال الكليشه م3')
-database:set(bot_id..'help3'..msg.sender_user_id_,'true')
-return false 
-end
-
-if text == 'تغير امر م4' and Devmode(msg) then
-send(msg.chat_id_, msg.id_, ' ✧∫ الان يمكنك ارسال الكليشه م4')
-database:set(bot_id..'help4'..msg.sender_user_id_,'true')
-return false 
-end
-
-if text == 'تغير امر م5' and Devmode(msg) then
-send(msg.chat_id_, msg.id_, ' ✧∫ الان يمكنك ارسال الكليشه م5')
-database:set(bot_id..'help5'..msg.sender_user_id_,'true')
-return false 
-end
-
-if text == 'تغير امر م6' and Devmode(msg) then
-send(msg.chat_id_, msg.id_, ' ✧∫ الان يمكنك ارسال الكليشه م6')
-database:set(bot_id..'help6'..msg.sender_user_id_,'true')
-return false 
-end
-
-if text == 'تغير امر م7' and Devmode(msg) then
-send(msg.chat_id_, msg.id_, ' ✧∫ الان يمكنك ارسال الكليشه م7')
-database:set(bot_id..'help7'..msg.sender_user_id_,'true')
-return false 
-end
-
-if text == 'تغير امر م8' and Devmode(msg) then
-send(msg.chat_id_, msg.id_, ' ✧∫  الان يمكنك ارسال الكليشه م8')
-database:set(bot_id..'help8'..msg.sender_user_id_,'true')
-return false 
-end
-
-if text == 'تغير امر م9' and Devmode(msg) then
-send(msg.chat_id_, msg.id_, ' ✧∫ الان يمكنك ارسال الكليشه م9')
-database:set(bot_id..'help9'..msg.sender_user_id_,'true')
-return false 
-end
-
-if text == 'تغير امر م10' and Devmode(msg) then
-send(msg.chat_id_, msg.id_, ' ✧∫ الان يمكنك ارسال الكليشه م10')
-database:set(bot_id..'help10'..msg.sender_user_id_,'true')
-return false 
-end
----------------------- الاوامر الجديدة
 if text == 'الاوامر' then
 if not Mod(msg) then
 send(msg.chat_id_, msg.id_,' ✧∫ هاذا الامر خاص بالادمنيه\n ✧∫ ارسل {م10} لعرض اوامر الاعضاء')
@@ -11614,7 +11446,7 @@ return false
 end
 local Teext =[[
 🛡∫𝙿𝚁𝙾𝚃𝙴𝙲𝚃𝙸𝙾𝙽 𝙾𝚁𝙳𝙴𝚁𝚂.
-┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
+≪─━─━𝙎𝙉━─━─≫
 ✧∫ اوامر الحمايه اتبع مايلي 🔐 .
 ≪━─━─━𝙎𝙉━─━─━≫
 ✧∫ قفل + فتح ← الامر… 
@@ -11681,7 +11513,7 @@ return false
 end
 local Teext =[[
 🔏∫𝙾𝚁𝙳𝙴𝚁𝚂 - 𝙰𝙲𝚃𝙸𝚅𝙰𝚃𝙸𝙾𝙽
-┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
+≪─━─━𝙎𝙉━─━─≫
 ✧∫ اهلا بك عزيزي 🔊 .
 ✧∫اوامر تفعيل وتعطيل ( 🔐 - 🔓) .
 ≪━─━─━𝙎𝙉━─━─━≫
@@ -11750,7 +11582,7 @@ return false
 end
 local Teext =[[
 📝∫𝙿𝚄𝚃 - 𝙰𝙳𝙳 .
-┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
+≪─━─━𝙎𝙉━─━─≫
 ✧∫ اهلا بك عزيزي ✓ .
 ✧∫اوامر الوضع - اضف ( 📌 - 📍) .
 ≪━─━─━𝙎𝙉━─━─━≫
@@ -11801,7 +11633,7 @@ return false
 end
 local Teext =[[
 ✂️∫W𝙸𝙿𝙴 - 𝙳𝙴𝙻𝙴𝚃𝙴 .
-┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
+≪─━─━𝙎𝙉━─━─≫
 ✧∫ اهلا بك عزيزي 🔊 .
 ✧∫اوامر مسح / الحذف ← امر ( ✂️ - 📝 ).
 ≪━─━─━𝙎𝙉━─━─━≫
@@ -11861,7 +11693,7 @@ return false
 end
 local Teext =[[
 🎚∫𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳 - 𝚄𝙿𝙻𝙾𝙰𝙳 .
-┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
+≪─━─━𝙎𝙉━─━─≫
 ✧∫ اهلا بك عزيزي 🔊 .
 ✧∫ اوامر تنزيل ورفع ( ⚖️ ) .
 ≪━─━─━𝙎𝙉━─━─━≫
@@ -11926,7 +11758,7 @@ return false
 end
 local Teext =[[
 🎫∫𝙶𝚁𝙾𝚄𝙿 𝙾𝚁𝙳𝙴𝚁𝚂 .
-┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
+≪─━─━𝙎𝙉━─━─≫
 ✧∫ اهلا بك عزيزي ✓ .
 ✧∫اوامر المجموعه 📢 .
 ≪━─━─━𝙎𝙉━─━─━≫
@@ -12010,7 +11842,7 @@ return false
 end
 local Teext =[[
 🤹🏻∫𝙵𝚄𝙽𝙽𝚈 𝙾𝚁𝙳𝙴𝚁𝚂 .
-┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
+≪─━─━𝙎𝙉━─━─≫
 ✧∫ الاوامر التحشيش 🃏
 ≪━─━─━𝙎𝙉━─━─━≫
 ✧∫ رفع + تنزيل ← الامࢪ ↓
@@ -12084,7 +11916,7 @@ return false
 end
 local Teext =[[
 🏅∫𝙳𝙴𝚅𝙴𝙻𝙾𝙿𝙴𝚁𝚂' 𝙾𝚁𝙳𝙴𝚁𝚂 .
-┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
+≪─━─━𝙎𝙉━─━─≫
 ✧∫اوامر المطورين ( 👥).
 ≪━─━─━𝙎𝙉━─━─━≫
 ✧∫تفعيل ← تعطيل 
@@ -12128,7 +11960,7 @@ return false
 end
 local Teext =[[
 🎖∫ 𝙱𝙰𝚂𝙸𝙲 𝙳𝙴𝚅𝙴𝙻𝙾𝙿𝙴𝚁 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂 .
-┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
+≪─━─━𝙎𝙉━─━─≫
 ✧∫ اهلا بك عزيزي ✓
 ✧∫اوامر مطور الاساسي 👨🏼‍✈️
 ≪━─━─━𝙎𝙉━─━─━≫
@@ -12221,7 +12053,6 @@ if Text == '/help10' then
 local help_text = database:get(bot_id..'help10_text')
 local Teext =[[
 🎒∫𝙼𝙴𝙼𝙱𝙴𝚁 𝙾𝚁𝙳𝙴𝚁𝚂 .
-┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
 ✧∫ اهلا بك عزيزي ✓ .
 ✧∫اوامر الاعضاء كالتالي ↓
 ≪━─━─━𝙎𝙉━─━─━≫
@@ -12408,7 +12239,7 @@ keyboard.inline_keyboard = {
 {text = '↻ 𝘽𝙖𝙘𝙠 ↺', callback_data="/add"},
 },
 {
-{text = '𝘾𝙝 - 𝙎𝙣𝙖𝙥 💥', url="t.me/iinzzz"},
+{text = '𝘾𝙝 - 𝙎𝙣𝙖𝙥 ??', url="t.me/iinzzz"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -12474,10 +12305,6 @@ keyboard.inline_keyboard = {
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
 --- callback added
-if text == 'م1' or text == 'م2' or text == 'م3' or text == 'م4' or text == 'م5' then
-send(msg.chat_id_, msg.id_,"مرحبا . اكتب `الاوامر` وتحكم في الكيبورد الكلايش")
-return false
-end
 if Text == '/add' then
 if not Constructor(data) then
 local notText = '✧ عذرا الاوامر هذه لا تخصك'
