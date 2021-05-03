@@ -11281,7 +11281,7 @@ database:set(bot_id.." mode:brj_Bots"..msg.chat_id_,"open")
 end
 if text and text:match("^برج (.*)$") and database:get(bot_id.." mode:brj_Bots"..msg.chat_id_) == "open" then
 local Textbrj = text:match("^برج (.*)$")
-gk = https.request('https://rudi-dev.tk/Amir2/Boyka.php?br='..URL.escape(Textbrj)..'')
+gk = https.request('https://mode-dev.tk/Api2/Modbr.php?br='..URL.escape(Textbrj)..'')
 br = JSON.decode(gk)
 i = 0
 for k,v in pairs(br.ok) do
@@ -11304,7 +11304,7 @@ database:set(bot_id.." mode:age_Bots"..msg.chat_id_,"open")
 end
 if text and text:match("^احسب (.*)$") and database:get(bot_id.." mode:age_Bots"..msg.chat_id_) == "open" then
 local Textage = text:match("^احسب (.*)$")
-ge = https.request('https://rudi-dev.tk/Amir3/Boyka.php?age='..URL.escape(Textage)..'')
+ge = https.request('https://mode-dev.tk/Api1/niggaapi.php?age='..URL.escape(Textage)..'')
 ag = JSON.decode(ge)
 i = 0
 for k,v in pairs(ag.ok) do
@@ -12239,7 +12239,7 @@ keyboard.inline_keyboard = {
 {text = '↻ 𝘽𝙖𝙘𝙠 ↺', callback_data="/add"},
 },
 {
-{text = '𝘾𝙝 - 𝙎𝙣𝙖𝙥 ??', url="t.me/iinzzz"},
+{text = '𝘾𝙝 - 𝙎𝙣𝙖𝙥 💥', url="t.me/iinzzz"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
