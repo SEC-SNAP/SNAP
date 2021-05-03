@@ -1150,7 +1150,7 @@ local updatech =[[
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝘾𝙝 - 𝙎𝙣𝙖𝙥 💥', url="t.me/iinzzz"}},
+{{text = '𝘾𝙝 - 𝙎𝙣𝙖𝙥 💥', url="t.me/BBI9B"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(updatech).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -2636,7 +2636,7 @@ end
 end,nil)  
 end
 if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then       
-Text = "[. 𝘾𝙝 - 𝙎𝙣𝙖𝙥 💥 .](t.me/iinzzz)\n ⇩                              "
+Text = "[. 𝘾𝙝 - 𝙎𝙣𝙖𝙥 💥 .](t.me/iinzzz) n\ ⇩                              "
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = '𝘿𝙚𝙫 𝙎𝙣𝙖𝙥 .',url="https://t.me/Z22SS"}},
