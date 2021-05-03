@@ -2636,7 +2636,7 @@ end
 end,nil)  
 end
 if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then       
-Text = "[. 𝘾𝙝 - 𝙎𝙣𝙖𝙥 💥 .](t.me/iinzzz) n\ ⇩                              "
+Text = "𝙒𝙀𝙇𝘾𝙊𝙈𝙀 𝙏𝙊 𝙎𝙉𝘼𝙋\n\n[𝘾𝙝𝙖𝙣𝙣𝙚𝙡 𝙎𝙣𝙖𝙥 💥](http://t.me/iinzzz)\n\n[𝙄𝙣𝙁𝙤 𝙎𝙤𝙪𝙧𝙘𝙚](http://t.me/BBI9B)"
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = '𝘿𝙚𝙫 𝙎𝙣𝙖𝙥 .',url="https://t.me/Z22SS"}},
